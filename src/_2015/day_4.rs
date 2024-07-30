@@ -8,7 +8,7 @@ pub fn mine_santacoin() {
         let s = format!("{secret_key}{appended}");
         let hash = md5::compute(s);
         let hex_representation = format!("{hash:x}");
-        if hex_representation[0..6] == "000000".to_owned() {
+        if hex_representation[0..6] == *"000000".to_owned() {
             println!("\n============{appended} = {hex_representation}============\n");
             break;
         }
