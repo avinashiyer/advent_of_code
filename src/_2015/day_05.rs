@@ -1,11 +1,11 @@
-use std::{char};
+use std::char;
 
 pub fn naughty_strings(src: Vec<&str>) {
     let mut num_nice = 0;
     for tgt in src {
         let mut two_pair_present = false;
-        for (pos,win) in tgt[..tgt.len()-2].as_bytes().windows(2).enumerate() {
-            for other_win in tgt[pos+2..].as_bytes().windows(2) {
+        for (pos, win) in tgt[..tgt.len() - 2].as_bytes().windows(2).enumerate() {
+            for other_win in tgt[pos + 2..].as_bytes().windows(2) {
                 if win == other_win {
                     two_pair_present = true;
                     break;
@@ -39,7 +39,7 @@ pub fn naughty_strings_v1(src: Vec<&str>) {
         if is_vowel(tgt.bytes().next().unwrap()) {
             num_vowels += 1;
         }
-        for (pos,win) in tgt.as_bytes().windows(2).enumerate() {
+        for win in tgt.as_bytes().windows(2) {
             if is_vowel(win[1]) {
                 num_vowels += 1;
             }

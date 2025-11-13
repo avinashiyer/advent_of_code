@@ -1,10 +1,12 @@
 use std::env;
-use std::fs::File;
-use std::io::Read;
+
 mod _2015;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    // Open input file specified by command line arg and split on newline
+    assert!(args.len()==3);
     let src = std::fs::read_to_string(&args[1]).unwrap();
-    _2015::day_5::naughty_strings(src.split_whitespace().collect());
+    let src2: Vec<&str> = src.split("\n").collect();
+    _2015::day_07::driver(src2,&args[2]);
 }

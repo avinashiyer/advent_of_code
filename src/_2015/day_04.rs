@@ -1,6 +1,5 @@
 use md5;
 
-
 pub fn mine_santacoin() {
     let secret_key = "bgvyzdsv";
     let mut appended = 1usize;
@@ -16,6 +15,5 @@ pub fn mine_santacoin() {
             println!("LN:{appended} - HEX:{hex_representation}");
         }
         appended += 1;
-        
-    } 
+    }
 }
